@@ -1,0 +1,70 @@
+<div class="container">
+<center>
+<span class='head'>Fonté</span>
+<br/>
+<br/>
+<span class='smallhead'>Font courtesy - Google Fonts (To request for more fonts, contact ritheshrohan7@gmail.com)</span>
+</center>
+<br />
+<br />
+<br />
+<div class="row">
+
+		<div class="col-md-3">
+		<textarea ng-model="content" class="form-control" placeholder="Enter Header Text here.."></textarea>
+		<br />
+		</div>
+
+
+		<div class="col-md-3">
+		<textarea ng-model="content1" class="form-control" placeholder="Enter Body Text here.."></textarea>
+		<br />
+		</div>
+
+		<div class="col-md-3">
+
+		<select class="form-control" ng-model="option" >
+		<option value="" default selected>Select Header Font</option>
+		<option data-ng-repeat="font in fontset | orderBy:'face' " >{{font.face}}</option>
+		</select>
+		<select class="form-control" ng-model="optionHsize" style="margin-top:5px;">
+		<option value="" default selected>Select Header Size (px)</option>
+		<option data-ng-repeat="fs in fontsize | orderBy:'fsize' " >{{fs.fsize}}</option>
+
+		</select>
+
+
+		<br />
+		</div>
+
+		<div class="col-md-3">
+		<select class="form-control" ng-model="option1">
+		<option value="" default selected>Select Body Font</option>
+		<option data-ng-repeat="font in fontset | orderBy:'face' " >{{font.face}}</option>
+		</select>
+		<select class="form-control" ng-model="optionBsize" style="margin-top:5px;">
+		<option value="" default selected>Select Body Size (px)</option>
+		<option data-ng-repeat="fs in fontsize | orderBy:'fsize' " >{{fs.fsize}}</option>
+		</select>
+		<br />
+		</div>
+
+</div>
+<br />
+<br />
+<br />
+<div class="row" >
+<div class="col-md-12">
+<p class="lead" style="font-family:{{option}}; font-size:{{optionHsize}}px"> <span ng-if="!content">Header Text</span> {{content}}</p>
+</div>
+</div>
+<hr style="margin-top:0px;" />
+<div class="row">
+<div class="col-md-12">
+<p class="lead" style="font-family:{{option1}}; font-size:{{optionBsize}}px"> <span ng-if="!content1">Body Text</span> {{content1}}</p>
+</div>
+</div>
+</div>
+
+
+</div>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app="fontApp">
+<head>
+
+	<title>Fonte</title>
+<script src="angular.min.js"></script>
+<script src="angular-route.js"></script>
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="style.css">
+<!-- FONT LIST -->
+
+<link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+
+<!-- END OF FONT LIST -->
+</head>
+<body>
+<div data-ng-view>
+
+</div>
+
+<script>
+
+var fontApp = angular.module('fontApp',['ngRoute']);
+
+
+fontApp.config(['$routeProvider',function($routeProvider){
+
+$routeProvider.
+when('/',{
+		controller:'fontController',
+		templateUrl:'font.html'
+}
+)
+.otherwise({
+	redirectTo:'font.html'
+});
+
+}]);
+
+// End of Configuration
+
+fontApp.controller('fontController',function($scope){
+
+
+$scope.fontset=[
+{face:'Arial'},
+{face:'Bungee'},
+{face:'Tangerine'},
+{face:'Roboto'},
+{face:'Open Sans'},
+{face:'Droid Sans'},
+{face:'Montserrat'},
+{face:'Raleway'},
+{face:'Lato'},
+{face:'Cinzel'}
+
+];
+
+$scope.fontsize=[
+{fsize:10},
+{fsize:20},
+{fsize:30},
+{fsize:40},
+{fsize:50},
+{fsize:60}
+
+];
+
+
+});
+
+
+
+</script>
+
+</body>
+</html>
